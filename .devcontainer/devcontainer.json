@@ -1,0 +1,11 @@
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { "VARIANT": "ubuntu-20.04" }
+	},
+
+	"postCreateCommand": "/bin/bash -c \"echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc && source /opt/ros/noetic/setup.bash && rosdep update && rosdep install -y --from-paths .\"",
+	"extensions": ["ms-iot.vscode-ros","ms-vscode.cmake-tools"],
+	"remoteUser": "vscode"
+}
